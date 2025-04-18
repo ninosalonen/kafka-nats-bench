@@ -14,9 +14,6 @@ services:
       - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT
       - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
       - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT
-      # - KAFKA_CFG_OFFSETS_TOPIC_REPLICATION_FACTOR=3
-      # - KAFKA_CFG_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=3
-      # - KAFKA_CFG_TRANSACTION_STATE_LOG_MIN_ISR=2
       - JAVA_TOOL_OPTIONS=-Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.port=5556 -Dcom.sun.management.jmxremote.rmi.port=5556 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false
 
   kafka-2:
@@ -32,9 +29,6 @@ services:
       - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT
       - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
       - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT
-      # - KAFKA_CFG_OFFSETS_TOPIC_REPLICATION_FACTOR=3
-      # - KAFKA_CFG_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=3
-      # - KAFKA_CFG_TRANSACTION_STATE_LOG_MIN_ISR=2
       - JAVA_TOOL_OPTIONS=-Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.port=5556 -Dcom.sun.management.jmxremote.rmi.port=5556 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false
 
   kafka-3:
@@ -50,9 +44,6 @@ services:
       - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT
       - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
       - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT
-      # - KAFKA_CFG_OFFSETS_TOPIC_REPLICATION_FACTOR=3
-      # - KAFKA_CFG_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=3
-      # - KAFKA_CFG_TRANSACTION_STATE_LOG_MIN_ISR=2
       - JAVA_TOOL_OPTIONS=-Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.port=5556 -Dcom.sun.management.jmxremote.rmi.port=5556 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false
 
   jmx-exporter-1:
