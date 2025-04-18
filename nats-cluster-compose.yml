@@ -1,5 +1,5 @@
 services:
-  nats_1:
+  nats-1:
     image: minideb-nats:1.0
     container_name: nats-server-1
     ports:
@@ -14,7 +14,7 @@ services:
       "--routes", "nats://nats-server-2:6222,nats://nats-server-3:6222"
     ]
 
-  nats_2:
+  nats-2:
     image: minideb-nats:1.0
     container_name: nats-server-2
     command: [
@@ -27,7 +27,7 @@ services:
       "--routes", "nats://nats-server-1:6222,nats://nats-server-3:6222"
     ]
 
-  nats_3:
+  nats-3:
     image: minideb-nats:1.0
     container_name: nats-server-3
     command: [
@@ -40,14 +40,14 @@ services:
       "--routes", "nats://nats-server-1:6222,nats://nats-server-2:6222"
     ]
 
-  nats_exporter:
+  nats-exporter:
     image: natsio/prometheus-nats-exporter:0.17.2
-    container_name: nats_exporter
-    command: ["-varz", "-jsz=all", "http://nats-server-1:8222", "http://nats-server-2:8222", "http://nats-server-3:8222"]
+    container_name: nats-exporter
     depends_on:
-      - nats_1
-      - nats_2
-      - nats_3
+      - nats-1
+      - nats-2
+      - nats-3
+    command: ["-varz", "-jsz=all", "http://nats-server-1:8222", "http://nats-server-2:8222", "http://nats-server-3:8222"]
 
   prometheus:
     image: prom/prometheus:v3.3.0
@@ -55,7 +55,7 @@ services:
     volumes:
       - ./nats-prometheus.yml:/etc/prometheus/prometheus.yml
     depends_on:
-      - nats_exporter
+      - nats-exporter
 
   grafana:
     image: grafana/grafana:11.6.0
