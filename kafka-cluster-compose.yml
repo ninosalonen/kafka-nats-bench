@@ -86,7 +86,7 @@ services:
     image: prom/prometheus:v3.3.0
     container_name: prometheus
     volumes:
-      - ./kafka-prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./config/kafka-cluster-prometheus.yml:/etc/prometheus/prometheus.yml
     depends_on:
       - jmx-exporter-1
       - jmx-exporter-2

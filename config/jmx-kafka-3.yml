@@ -1,5 +1,4 @@
 jmxUrl: "service:jmx:rmi:///jndi/rmi://kafka-3:5556/jmxrmi"
-
 startDelaySeconds: 0
 ssl: false
 lowercaseOutputName: true
