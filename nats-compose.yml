@@ -1,7 +1,7 @@
 services:
-  nats:
+  nats-1:
     image: minideb-nats:1.0
-    container_name: nats-server
+    container_name: nats-server-1
     ports:
       - "4222:4222"
     command: [
@@ -13,14 +13,15 @@ services:
   nats-exporter:
     image: natsio/prometheus-nats-exporter:0.17.2
     container_name: nats-exporter
-    command: ["-varz", "-jsz=all", "http://nats-server:8222"]
-    depends_on: nats
+    command: ["-varz", "-jsz=all", "http://nats-1:8222"]
+    depends_on: 
+      - nats-1
 
   prometheus:
     image: prom/prometheus:v3.3.0
     container_name: prometheus
     volumes:
-      - ./nats-prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./config/nats-prometheus.yml:/etc/prometheus/prometheus.yml
     depends_on:
       - nats-exporter
 

@@ -47,13 +47,13 @@ services:
       - nats-1
       - nats-2
       - nats-3
-    command: ["-varz", "-jsz=all", "http://nats-server-1:8222", "http://nats-server-2:8222", "http://nats-server-3:8222"]
+    command: ["-varz", "-jsz=all", "http://nats-1:8222", "http://nats-2:8222", "http://nats-3:8222"]
 
   prometheus:
     image: prom/prometheus:v3.3.0
     container_name: prometheus
     volumes:
-      - ./nats-prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./config/nats-prometheus.yml:/etc/prometheus/prometheus.yml
     depends_on:
       - nats-exporter
 
