@@ -4,11 +4,7 @@ services:
     container_name: nats-server-1
     ports:
       - "4222:4222"
-    command: [
-      "/nats-server",
-      "-js",
-      "-m", "8222"
-    ]
+    command: ["/nats-server", "-js", "-m", "8222"]
 
   nats-exporter:
     image: natsio/prometheus-nats-exporter:0.17.2
