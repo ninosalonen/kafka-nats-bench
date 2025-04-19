@@ -8,7 +8,7 @@ services:
 
   nats-exporter:
     image: natsio/prometheus-nats-exporter:0.17.2
-    container_name: nats-exporter
+    container_name: prometheus-nats-exporter
     command: ["-varz", "-jsz=all", "http://nats-1:8222"]
     depends_on: 
       - nats-1
