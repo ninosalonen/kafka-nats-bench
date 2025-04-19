@@ -46,7 +46,7 @@ services:
 
   nats-exporter:
     image: natsio/prometheus-nats-exporter:0.17.2
-    container_name: nats-exporter
+    container_name: prometheus-nats-exporter
     depends_on:
       - nats-1
       - nats-2
