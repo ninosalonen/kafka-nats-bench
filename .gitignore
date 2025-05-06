@@ -1,0 +1,9 @@
+.vscode
+
+clients/kafka/target
+clients/nats/target
+
+#result files
+*.csv
+*.jar
+*.png

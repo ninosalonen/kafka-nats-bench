@@ -1,0 +1,12 @@
+volumes:
+  nats-data-1:
+
+services:
+  nats-1:
+    image: minideb-nats:1.0
+    container_name: nats-server-1
+    volumes:
+      - nats-data-1:/tmp/nats
+    ports:
+      - "4222:4222"
+    command: ["/nats-server", "-js"]
